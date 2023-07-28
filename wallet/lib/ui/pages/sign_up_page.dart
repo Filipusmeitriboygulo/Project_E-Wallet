@@ -81,7 +81,12 @@ class SignUpPage extends StatelessWidget {
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onpPressed: () {},
+                  onpPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/sign-up-set-profile',
+                    );
+                  },
                 )
               ],
             ),
@@ -100,4 +105,3 @@ class SignUpPage extends StatelessWidget {
     );
   }
 }
- 
