@@ -102,29 +102,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           children: [
                             CustomFilledButton(
                               title: 'Get Started',
-                              onpPressed: () {},
+                              onpPressed: () {
+                                Navigator.pushNamed(context, '/sign-up');
+                              },
                             ),
                             const SizedBox(
                               height: 20,
                             ),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 24,
-                              child: TextButton(
-                                onPressed: () {
-                                  // var navigator = Navigator;
+                            CustomTextButton(
+                                title: 'Sign In',
+                                onpPressed: () {
                                   Navigator.pushNamed(context, '/sign-in');
-                                },
-                                style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero),
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
-                            ),
+                                })
                           ],
                         )
                       : Row(

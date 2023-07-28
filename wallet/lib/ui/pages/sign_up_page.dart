@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:wallet/shared/theme.dart';
-import 'package:wallet/ui/widgets/buttons.dart';
-import 'package:wallet/ui/widgets/forms.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+import '../../shared/theme.dart';
+import '../widgets/buttons.dart';
+import '../widgets/forms.dart';
+
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class SignInPage extends StatelessWidget {
                     image: AssetImage('assets/img_logo_light.png'))),
           ),
           Text(
-            'Sign In & \nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontWeight: semiBold,
               fontSize: 20,
@@ -44,6 +45,14 @@ class SignInPage extends StatelessWidget {
             ),
             child: Column(
               children: [
+                // Full name  Input
+                const CustomFormField(
+                  title: 'Full Name',
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+
                 // NOTE : EMAIL INPUT
                 const CustomFormField(
                   title: 'Email Address',
@@ -57,22 +66,21 @@ class SignInPage extends StatelessWidget {
                   title: 'Password',
                   obscureText: true,
                 ),
-
-                const SizedBox(
-                  height: 8,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Pasword',
-                    style: blueTextStyle,
-                  ),
-                ),
+                // const SizedBox(
+                //   height: 8,
+                // ),
+                // Align(
+                //   alignment: Alignment.centerRight,
+                //   child: Text(
+                //     'Forgot Pasword',
+                //     style: blueTextStyle,
+                //   ),
+                // ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
-                  title: 'Sign In',
+                  title: 'Continue',
                   onpPressed: () {},
                 )
               ],
@@ -82,13 +90,14 @@ class SignInPage extends StatelessWidget {
             height: 50,
           ),
           CustomTextButton(
-            title: 'Create New Account',
+            title: 'Sign In',
             onpPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
-          )
+          ),
         ],
       ),
     );
   }
 }
+ 
