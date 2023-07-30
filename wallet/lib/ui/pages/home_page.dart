@@ -212,6 +212,33 @@ Widget buildLevel() {
     ),
     padding: const EdgeInsets.all(22),
     decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20), color: whiteColor),
+      borderRadius: BorderRadius.circular(20),
+      color: whiteColor,
+    ),
+    child: Column(
+      children: [
+        Text(
+          'Level 1',
+          style: blackTextStyle.copyWith(
+            fontSize: 14,
+            fontWeight: medium,
+          ),
+        ),
+        const Spacer(),
+        Text(
+          '55%',
+          style: greenTextStyle.copyWith(
+            fontSize: 14,
+            fontWeight: semiBold,
+          ),
+        ),
+        Text(
+          'of Rp 20.000',
+          style: blackTextStyle.copyWith(
+            fontWeight: semiBold,
+          ),
+        ),
+      ],
+    ),
   );
 }
