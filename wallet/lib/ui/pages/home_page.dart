@@ -74,7 +74,11 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        children: [buildProfile(), buildWallletCard()],
+        children: [
+          buildProfile(),
+          buildWallletCard(),
+          buildLevel(),
+        ],
       ),
     );
   }
@@ -198,5 +202,16 @@ Widget buildWallletCard() {
         )
       ],
     ),
+  );
+}
+
+Widget buildLevel() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 20,
+    ),
+    padding: const EdgeInsets.all(22),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20), color: whiteColor),
   );
 }
