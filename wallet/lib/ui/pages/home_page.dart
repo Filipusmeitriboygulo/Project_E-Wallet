@@ -217,28 +217,47 @@ Widget buildLevel() {
     ),
     child: Column(
       children: [
-        Text(
-          'Level 1',
-          style: blackTextStyle.copyWith(
-            fontSize: 14,
-            fontWeight: medium,
-          ),
+        Row(
+          children: [
+            Text(
+              'Level 1',
+              style: blackTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: medium,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              '55%',
+              style: greenTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: semiBold,
+              ),
+            ),
+            Text(
+              'of Rp 20.000',
+              style: blackTextStyle.copyWith(
+                fontWeight: semiBold,
+              ),
+            ),
+          ],
         ),
-        const Spacer(),
-        Text(
-          '55%',
-          style: greenTextStyle.copyWith(
-            fontSize: 14,
-            fontWeight: semiBold,
-          ),
+        const SizedBox(
+          height: 10,
         ),
-        Text(
-          'of Rp 20.000',
-          style: blackTextStyle.copyWith(
-            fontWeight: semiBold,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(55),
+          child: LinearProgressIndicator(
+            value: 0.55,
+            minHeight: 5,
+            valueColor: AlwaysStoppedAnimation(
+              greenColor,
+            ),
+            backgroundColor: lightBackgroundColor,
           ),
         ),
       ],
     ),
   );
 }
+
