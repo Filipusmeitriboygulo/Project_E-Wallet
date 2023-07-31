@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/shared/theme.dart';
+import 'package:wallet/ui/widgets/home_services.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -78,6 +79,7 @@ class HomePage extends StatelessWidget {
           buildProfile(),
           buildWallletCard(),
           buildLevel(),
+          buildServices()
         ],
       ),
     );
@@ -261,3 +263,50 @@ Widget buildLevel() {
   );
 }
 
+Widget buildServices() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 30,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Do Something',
+          style: blackTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: semiBold,
+          ),
+        ),
+        const SizedBox(
+          height: 14,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            HomeServicesItem(
+              iconUrl: "assets/ic_topup.png",
+              title: "Top Up",
+              onTap: () {},
+            ),
+            HomeServicesItem(
+              iconUrl: "assets/ic_send.png",
+              title: "Send",
+              onTap: () {},
+            ),
+            HomeServicesItem(
+              iconUrl: "assets/ic_withdraw.png",
+              title: "Withdraw",
+              onTap: () {},
+            ),
+            HomeServicesItem(
+              iconUrl: "assets/ic_more.png",
+              title: "More",
+              onTap: () {},
+            ),
+          ],
+        )
+      ],
+    ),
+  );
+}
